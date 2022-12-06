@@ -28,7 +28,7 @@ namespace ContactApp
         /// <summary>
         /// Функция, выполняющая функцию десериализации
         /// </summary>
-        /// <returns></returns>
+        /// <returns></returns>C
         public static ContactFunction LoadFile()
         {
             JsonSerializer serializer = new JsonSerializer();

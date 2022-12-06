@@ -15,7 +15,7 @@ namespace ContactApp
         /// <summary>
         /// Идентификатор контакта
         /// <summary>
-        private string contactId;
+        private static int contactId = -1;
         /// <summary>
         /// Имя
         /// <summary>
@@ -31,7 +31,7 @@ namespace ContactApp
         // email
         private string email;
 
-        public string ContactId
+        public int ContactId
         {
             get
             {
@@ -39,11 +39,7 @@ namespace ContactApp
             }
             set
             {
-                if (value.Length < 0 || value.Length > 15)
-                {
-                    throw new ArgumentException("Поле ID должно быть больше 0 и меньше 15 символов");
-                }
-                contactId = value;
+                contactId++;
             }
         }
         public string FirstName
@@ -54,9 +50,9 @@ namespace ContactApp
             }
             set 
             {
-                if (value.Length > 50)
+                if (value.Length > 50 )
                 {
-                    throw new ArgumentException("Имя должно быть короче 50 символов");
+                    throw new ArgumentException("Поле не должно быть пустым и должно быть короче 50 символов");
                 }
                 firstName = value;
             }
@@ -85,6 +81,7 @@ namespace ContactApp
             }
             set
             {
+
                 phone = value;
             }
         }
@@ -94,13 +91,16 @@ namespace ContactApp
             get { return email; }
             set { email = value; }
         }
-        public Contact(string contactID, string firstName, string lastName, string phone, string email)
+        public Contact(string firstName, string lastName, string phone, string email)
         {
-            ContactId = contactID;
+            this.ContactId = ContactId;
             FirstName = firstName;
             LastName = lastName;
             Phone = phone;
             Email = email;
+        }
+        public Contact()
+        {
         }
     }
 }
