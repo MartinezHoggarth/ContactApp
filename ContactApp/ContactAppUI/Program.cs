@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ContactApp;
+using ContactApp.UnitTests;
 
 namespace ContactAppUI
 {
@@ -17,7 +18,7 @@ namespace ContactAppUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MasterForm());
+            Application.Run(new UnitTestForm());
         }
     }
 }

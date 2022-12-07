@@ -21,7 +21,6 @@ namespace ContactApp
             using (StreamWriter sw = new StreamWriter((@"C:\Users\dinam\Desktop\ContactApp.txt")))
             using (JsonWriter writer = new JsonTextWriter(sw))
             {
-
                 serializer.Serialize(writer, data);
             }
         }

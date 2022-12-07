@@ -43,6 +43,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,10 +56,22 @@
     <Compile Include="ContactManagerTest.cs" />
     <Compile Include="ContactFunctionTest.cs" />
     <Compile Include="ContactTest.cs" />
+    <Compile Include="UnitTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitTestForm.Designer.cs">
+      <DependentUpon>UnitTestForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ContactApp\ContactApp.csproj">
+      <Project>{455e116a-e9a6-45e7-902f-561ba70703b7}</Project>
+      <Name>ContactApp</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
