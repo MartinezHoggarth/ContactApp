@@ -8,14 +8,14 @@ using Newtonsoft.Json;
 
 namespace ContactApp
 {
-    public class ContactManager
+    internal class ContactManagerTest
     {
         /// <summary>
         /// Функция, выполняющая функцию сериализации
         /// </summary>
 
 
-        public static void SaveFile(ContactFunction data)
+        public static void SaveFile(ContactFunctionTest data)
         {
             JsonSerializer serializer = new JsonSerializer();
             using (StreamWriter sw = new StreamWriter((@"C:\Users\dinam\Desktop\ContactApp.txt")))
