@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace ContactApp.UnitTests
 {
-    internal class ContactFunction
+    public class ContactFunctionTest
     {
 
         public List<ContactTest> сontactList;
 
-        public ContactFunction()
+        public ContactFunctionTest()
         {
             сontactList = new List<ContactTest>();
 

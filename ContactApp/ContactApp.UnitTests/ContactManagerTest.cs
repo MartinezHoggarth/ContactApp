@@ -11,36 +11,34 @@ namespace ContactApp.UnitTests
 {
     internal class ContactManagerTest
     {
-        public class ContactManager
+        /// <summary>
+        /// Функция, выполняющая функцию сериализации
+        /// </summary>
+
+
+        public static void SaveFile(ContactFunctionTest data)
         {
-            /// <summary>
-            /// Функция, выполняющая функцию сериализации
-            /// </summary>
-
-
-            public static void SaveFile(ContactFunction data)
+            JsonSerializer serializer = new JsonSerializer();
+            using (StreamWriter sw = new StreamWriter((@"C:\Users\dinam\Desktop\ContactApp.txt")))
+            using (JsonWriter writer = new JsonTextWriter(sw))
             {
-                JsonSerializer serializer = new JsonSerializer();
-                using (StreamWriter sw = new StreamWriter((@"C:\Users\dinam\Desktop\ContactApp.txt")))
-                using (JsonWriter writer = new JsonTextWriter(sw))
-                {
 
-                    serializer.Serialize(writer, data);
-                }
+                serializer.Serialize(writer, data);
             }
-            /// <summary>
-            /// Функция, выполняющая функцию десериализации
-            /// </summary>
-            /// <returns></returns>C
-            public static ContactFunction LoadFile()
+        }
+        /// <summary>
+        /// Функция, выполняющая функцию десериализации
+        /// </summary>
+        /// <returns></returns>C
+        public static ContactFunctionTest LoadFile()
+        {
+            JsonSerializer serializer = new JsonSerializer();
+            using (StreamReader sr = new StreamReader(@"C:\Users\dinam\Desktop\ContactApp.txt"))
+            using (JsonReader reader = new JsonTextReader(sr))
             {
-                JsonSerializer serializer = new JsonSerializer();
-                using (StreamReader sr = new StreamReader(@"C:\Users\dinam\Desktop\ContactApp.txt"))
-                using (JsonReader reader = new JsonTextReader(sr))
-                {
-                    return (ContactFunction)serializer.Deserialize<ContactFunction>(reader);
-                }
+                return (ContactFunctionTest)serializer.Deserialize<ContactFunctionTest>(reader);
             }
         }
     }
 }
+

@@ -15,7 +15,7 @@ namespace ContactApp
         /// </summary>
 
 
-        public static void SaveFile(ContactFunctionTest data)
+        public static void SaveFile(ContactFunction data)
         {
             JsonSerializer serializer = new JsonSerializer();
             using (StreamWriter sw = new StreamWriter((@"C:\Users\dinam\Desktop\ContactApp.txt")))
